@@ -1,0 +1,25 @@
+$array = Array (
+    "nama"      => "Owin",
+    "age"       => "23",
+    "alamat"    => "jl kenari",
+    "hobby" => Array (
+        "hobby1" => "olahraga",
+        "hobby2" => "membaca"
+    ),
+    "stats"     => "single",
+    "sekolah"   => Array (
+        "sd"    => "Bina Artha",
+        "smp"   => "ST Yosep",
+        "sma"   => "Budi Utomo"
+    ),
+    "skill"     => "beginner"
+);
+
+// encode array to json
+	$json = json_encode(array('biodata' => $array));
+
+	// write json to file
+	if (file_put_contents("data.json", $json))
+		echo "File JSON sukses dibuat...";
+	else 
+		echo "Oops! Terjadi error saat membuat file JSON...";
